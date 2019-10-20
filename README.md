@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-Psyhelper is small (definitely growing\!) collection of convenience
+psyhelper is small (definitely growing\!) collection of convenience
 functions in order to help you (and me) analyze behavioral data. For
 now, it does two things: it helps you read csv files downloaded from
 Qualtrics directly, despite the weird three-rows header of column names.
@@ -41,8 +41,8 @@ and you would now like to use it for data analysis in R.
 
 ``` r
 library(psyhelper)
-## basic example code
-read_qualtrics("my_qualtrics_data.csv")
+
+data_file <- read_qualtrics("my_qualtrics_data.csv")
 ```
 
 ## Example 2
@@ -56,6 +56,8 @@ model needs you to specify them using cumulative log odds.
 
 ``` r
 library(psyhelper)
-## basic example code
+
 get_ordinal_priors(c(20, 20, 30, 15, 15))
+#> Note that you are not given the log odds for the last threshold as it does not need to be specified in brms. (Cumulative probabilities always sum to 1.)
+#> [1] -1.3862944 -0.4054651  0.8472979  1.7346011
 ```

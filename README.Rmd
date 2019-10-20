@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-Psyhelper is small (definitely growing!) collection of convenience functions in order to help you (and me)
+psyhelper is small (definitely growing!) collection of convenience functions in order to help you (and me)
 analyze behavioral data. For now, it does two things: it helps you read csv files downloaded from 
 Qualtrics directly, despite the weird three-rows header of column names. It also helps you when you need to
 set priors for an ordinal variable (such as a Likert scale) for Bayesian modeling (for instance with brms) 
@@ -48,8 +48,8 @@ for data analysis in R.
 
 ```{r example 1, eval=FALSE}
 library(psyhelper)
-## basic example code
-read_qualtrics("my_qualtrics_data.csv")
+
+data_file <- read_qualtrics("my_qualtrics_data.csv")
 ```
 
 ## Example 2
@@ -60,9 +60,9 @@ Now, you want to specify priors for the response points, but you represent prior
 in terms of the probability for each response point, and the model needs you to specify them using
 cumulative log odds. 
 
-```{r example 2, eval=FALSE}
+```{r example 2}
 library(psyhelper)
-## basic example code
+
 get_ordinal_priors(c(20, 20, 30, 15, 15))
 ```
 

@@ -39,6 +39,6 @@ get_ordinal_priors <- function(probs) {
 
   cum_probs <- cumsum(probs)
   log_odds <- stats::qlogis(cum_probs)
-  message("Note that you are not given the log odds for the last threshold as it does not need to be specified in brms. (Cumulative probabilities always sum to 1.)")
+  message("Cumulative probabilities always sum to 1 so the log odds for the last threshold is not returned.")
   return(log_odds[-n])
 }
