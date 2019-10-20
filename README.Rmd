@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# psyhelper
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+Psyhelper is small (definitely growing!) collection of convenience functions in order to help you (and me)
+analyze behavioral data. For now, it does two things: it helps you read csv files downloaded from 
+Qualtrics directly, despite the weird three-rows header of column names. It also helps you when you need to
+set priors for an ordinal variable (such as a Likert scale) for Bayesian modeling (for instance with brms) 
+by converting your probabilities into cumulative log odds. 
+
+The package uses tidyverse functions.
+
+
+## Installation
+
+<!-- You can install the released version of psyhelper from [CRAN](https://CRAN.R-project.org) with: 
+
+``` r
+install.packages("psyhelper")
+``` --> 
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("PLMir/psyhelper")
+```
+## Example 1
+
+You just downloaded the file "my_qualtrics_data.csv" from Qualtrics and you would now like to use it 
+for data analysis in R. 
+
+```{r example 1, eval=FALSE}
+library(psyhelper)
+## basic example code
+read_qualtrics("my_qualtrics_data.csv")
+```
+
+## Example 2
+
+Your response variable is on a 5-point Likert scale and so you wisely decided to use a cumulative
+distribution (for reasons why, see Lidell & Kruschke, 2018) for your Bayesian model (e.g. using brms).
+Now, you want to specify priors for the response points, but you represent priors in your mind 
+in terms of the probability for each response point, and the model needs you to specify them using
+cumulative log odds. 
+
+```{r example 2, eval=FALSE}
+library(psyhelper)
+## basic example code
+get_ordinal_priors(c(20, 20, 30, 15, 15))
+```
+
