@@ -54,7 +54,7 @@ data_file <- read_qualtrics("my_qualtrics_data.csv")
 
 ## Example 2
 
-Your response variable is on a 5-point Likert scale and so you wisely decided to use a cumulative
+Your response variable is on a 5-point Likert scale and so you have wisely decided to use a cumulative
 distribution (for reasons why, see Lidell & Kruschke, 2018) for your Bayesian model (e.g. using brms).
 Now, you want to specify priors for the response points, but you represent priors in your mind 
 in terms of the probability for each response point, and the model needs you to specify them using

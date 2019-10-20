@@ -58,6 +58,6 @@ model needs you to specify them using cumulative log odds.
 library(psyhelper)
 
 get_ordinal_priors(c(20, 20, 30, 15, 15))
-#> Note that you are not given the log odds for the last threshold as it does not need to be specified in brms. (Cumulative probabilities always sum to 1.)
+#> Cumulative probabilities always sum to 1 so the log odds for the last threshold is not returned.
 #> [1] -1.3862944 -0.4054651  0.8472979  1.7346011
 ```
