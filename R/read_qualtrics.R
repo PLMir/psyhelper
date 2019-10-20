@@ -9,7 +9,7 @@
 #'  Use \code{read_qualtrics} instead to directly import your csv file with usable column names and
 #'  allow \code{read_csv} to impute your column types.
 #'
-#' @param A path to a csv file imported from Qualtrics
+#' @param file A path to a csv file imported from Qualtrics
 #'
 #' @return A tibble().
 #' @export
