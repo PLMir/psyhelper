@@ -7,7 +7,7 @@
 
 <!-- badges: end -->
 
-psyhelper is small (definitely growing\!) collection of convenience
+psyhelper is a small (definitely growing\!) collection of convenience
 functions in order to help you (and me) analyze behavioral data. For
 now, it does two things: it helps you read csv files downloaded from
 Qualtrics directly, despite the weird three-rows header of column names.
